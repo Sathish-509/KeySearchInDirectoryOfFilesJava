@@ -14,6 +14,7 @@ in this case its not required,
 change the Shorten command to Janifest)
 
 * In postman, provide 
+```
 URL: localhost:8080/search/v1/getlistoffiles
 Method: POST
 Body: 
@@ -21,7 +22,7 @@ Body:
 	"directoryPath": "E:\\Technical\\searchbykey",
 	"searchKey": "contains"
 }
-
+```
 ```
 Sample Output:
 [
