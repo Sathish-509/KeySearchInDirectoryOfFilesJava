@@ -48,15 +48,12 @@ public class ServiceSearchKey {
         return null;
     }
 
-    public static void main(String[] args) {
-        ServiceSearchKey test = new ServiceSearchKey();
-        String startDir = ("E:\\Technical\\searchbykey");
-        List<String> listOfFiles = test.findListOfFilesInaDirectory(startDir);
+    public List<String> getListOfFilesBySearchKey(String directoryPath, String searchKey) {
+        List<String> listOfFiles = findListOfFilesInaDirectory(directoryPath);
         List<String> filteredList = new ArrayList<>();
         listOfFiles.forEach((filePath) -> {
-            filteredList.add(test.searchKeyInFile(filePath, "contains"));
+            filteredList.add(searchKeyInFile(filePath, searchKey));
         });
-        filteredList.stream().filter(f -> f != null).collect(Collectors.toList());
-        filteredList.forEach(System.out::println);
-     }
+        return filteredList.stream().filter(f -> f != null).collect(Collectors.toList());
+    }
 }
